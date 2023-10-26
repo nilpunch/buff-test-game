@@ -1,7 +1,7 @@
 ﻿namespace Game
 {
 	/// <summary>
-	/// Update loops for some time-based things.
+	/// Update loop for some time-based thing.
 	/// </summary>
 	public interface ITimer
 	{

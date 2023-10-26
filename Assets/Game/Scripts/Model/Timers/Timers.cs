@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace Game
 {
 	/// <summary>
-	/// Update loops
+	/// Update loop for all timers.
 	/// </summary>
 	public class Timers
 	{
@@ -62,7 +62,7 @@ namespace Game
 			}
 			foreach (var timerId in _bufferForRemoves)
 			{
-				_bufferForRemoves.Remove(timerId);
+				_signedTimers.Remove(timerId);
 			}
 			_bufferForRemoves.Clear();
 		}

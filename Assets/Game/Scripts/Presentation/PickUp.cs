@@ -4,6 +4,8 @@ namespace Game
 {
 	public class PickUp : MonoBehaviour
 	{
+		[SerializeField] private GameObject _root;
+		
 		private IEffect _effect;
 
 		public void Construct(IEffect effect)
@@ -13,9 +15,10 @@ namespace Game
 
 		private void OnTriggerEnter(Collider other)
 		{
-			if (other.TryGetComponent<Character>(out _))
+			if (other.TryGetComponent<CharacterController>(out _))
 			{
 				_effect.Apply();
+				Destroy(_root);
 			}
 		}
 	}
