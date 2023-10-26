@@ -5,5 +5,7 @@
         Stat Speed { get; }
 
         IMovementMode MovementMode { get; set; }
+
+        void Update();
 	}
 }

@@ -18,7 +18,7 @@ namespace Game
 
 		private void Awake()
 		{
-			CharacterController characterController = Instantiate(_characterPrefab);
+			var characterController = Instantiate(_characterPrefab);
 
 			var initialMovement = _characterInitialMovementConfig.CreateMovementMode(characterController);
 
@@ -27,7 +27,7 @@ namespace Game
 				new Timers(),
 				characterController);
 
-			List<PickUpFactory> pickupFactories = _pickUpConfigs
+			var pickupFactories = _pickUpConfigs
 				.Select(pickUpConfig => pickUpConfig.CreatePickUpFactory(_run))
 				.ToList();
 

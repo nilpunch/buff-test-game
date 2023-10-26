@@ -42,7 +42,7 @@ namespace Game
 			return _signedTimers[timerId];
 		}
 
-		public void Tick()
+		public void Update()
 		{
 			// Update and clean simple timers
 			foreach (var timer in _timers)

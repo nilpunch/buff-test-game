@@ -2,6 +2,10 @@
 
 namespace Game
 {
+	/// <summary>
+	/// This class is a core update loop for the running session.<br/>
+	/// Also, it provides easy access to some objects for the factories.
+	/// </summary>
 	public class Run
 	{
 		public Run(ICharacter character, Timers timers, CharacterController characterController)
@@ -19,8 +23,8 @@ namespace Game
 
 		public void Update()
 		{
-			Character.MovementMode.ProcessMovement();
-			Timers.Tick();
+			Character.Update();
+			Timers.Update();
 		}
 	}
 }

@@ -21,7 +21,7 @@
 			_character.Speed.Value += _speedChange;
 			
 			// Add the timer to apply opposite (negative) speed change
-			_timers.Add(new ChangeSpeedTimer(_character, -_speedChange, _duration));
+			_timers.Add(new SpeedChangeTimer(_character, -_speedChange, _duration));
 		}
 	}
 }
