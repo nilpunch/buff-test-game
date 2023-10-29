@@ -45,6 +45,9 @@ namespace Game
 
 		protected virtual void OnTick() {}
 
+		/// <summary>
+		/// Will be executed only once.
+		/// </summary>
 		protected virtual void OnTerminated() {}
 	}
 }

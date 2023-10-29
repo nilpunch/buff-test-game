@@ -10,25 +10,25 @@ namespace Game
 	{
 		public RunningSession(ICharacter character, CharacterController characterController)
 		{
-			CommonJobRunner = new JobRunner();
-			MovementModeJobRunner = new JobRunner();
+			CommonJobs = new JobRunner();
+			MovementModeChangeJobs = new JobRunner();
 			Character = character;
 			CharacterController = characterController;
 		}
 
 		public ICharacter Character { get; }
 		
-		public IJobRunner MovementModeJobRunner { get; }
+		public IJobRunner MovementModeChangeJobs { get; }
 		
-		public IJobRunner CommonJobRunner { get; }
+		public IJobRunner CommonJobs { get; }
 		
 		public CharacterController CharacterController { get; }
 
 		public void Update()
 		{
 			Character.Update();
-			CommonJobRunner.Update();
-			MovementModeJobRunner.Update();
+			CommonJobs.Update();
+			MovementModeChangeJobs.Update();
 		}
 	}
 }

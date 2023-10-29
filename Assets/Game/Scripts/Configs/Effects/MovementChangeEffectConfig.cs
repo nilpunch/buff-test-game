@@ -10,7 +10,7 @@ namespace Game
 		
 		public override IEffect CreateEffect(RunningSession runningSession)
 		{
-			return new MovementChangeEffect(runningSession.Character, runningSession.MovementModeJobRunner,
+			return new MovementChangeEffect(runningSession.Character, runningSession.MovementModeChangeJobs,
 				_movementModeConfig.CreateMovementMode(runningSession.CharacterController), _duration);
 		}
 	}

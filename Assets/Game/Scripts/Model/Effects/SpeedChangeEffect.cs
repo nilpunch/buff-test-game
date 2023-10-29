@@ -17,11 +17,11 @@
 
 		public void Apply()
 		{
-			// Apply speed change
+			// Apply speed change to character speed.
 			_character.Speed.Value += _speedChange;
 			
-			// Add the timer to apply opposite (negative) speed change
-			_jobRunner.Run(new SpeedChangeAfterDuration(_character, -_speedChange, _duration));
+			// Create a timer, that will apply opposite (negative) speed change.
+			_jobRunner.Run(new SpeedChangeTimer(_character, -_speedChange, _duration));
 		}
 	}
 }

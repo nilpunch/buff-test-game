@@ -10,7 +10,7 @@ namespace Game
 		
 		public override IEffect CreateEffect(RunningSession runningSession)
 		{
-			return new SpeedChangeEffect(runningSession.Character, runningSession.CommonJobRunner, _speedDelta, _duration);
+			return new SpeedChangeEffect(runningSession.Character, runningSession.CommonJobs, _speedDelta, _duration);
 		}
 	}
 }
