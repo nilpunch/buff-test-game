@@ -10,9 +10,9 @@ namespace Game
 
 		[field: SerializeField] public float GenerationWeight { get; private set; } = 1f;
 
-		public PickUpFactory CreatePickUpFactory(Run run)
+		public PickUpFactory CreatePickUpFactory(RunningSession runningSession)
 		{
-			return new PickUpFactory(_prefab, _effect.CreateEffect(run));
+			return new PickUpFactory(_prefab, _effect.CreateEffect(runningSession));
 		}
 	}
 }

@@ -3,14 +3,14 @@
 	public class SpeedChangeEffect : IEffect
 	{
 		private readonly ICharacter _character;
-		private readonly Timers _timers;
+		private readonly IJobRunner _jobRunner;
 		private readonly float _speedChange;
 		private readonly float _duration;
 
-		public SpeedChangeEffect(ICharacter character, Timers timers, float speedChange, float duration)
+		public SpeedChangeEffect(ICharacter character, IJobRunner jobRunner, float speedChange, float duration)
 		{
 			_character = character;
-			_timers = timers;
+			_jobRunner = jobRunner;
 			_speedChange = speedChange;
 			_duration = duration;
 		}
@@ -21,7 +21,7 @@
 			_character.Speed.Value += _speedChange;
 			
 			// Add the timer to apply opposite (negative) speed change
-			_timers.Add(new SpeedChangeTimer(_character, -_speedChange, _duration));
+			_jobRunner.Run(new SpeedChangeAfterDuration(_character, -_speedChange, _duration));
 		}
 	}
 }

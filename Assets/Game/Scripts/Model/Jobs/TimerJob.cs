@@ -2,21 +2,25 @@
 
 namespace Game
 {
-	public abstract class TimerBase : ITimer
+	/// <summary>
+	/// Code reuse for time-based jobs.
+	/// </summary>
+	public abstract class TimerJob : IJob
 	{
 		private readonly float _startTime;
-		private readonly float _duration;
 		
-		protected TimerBase(float duration)
+		protected TimerJob(float duration)
 		{
-			_duration = duration;
+			Duration = duration;
 			_startTime = Time.time;
 		}
 
+		public float Duration { get; }
+		
 		public float ElapsedTime => Time.time - _startTime;
-		
-		public float RemainingTime => _startTime + _duration - Time.time;
-		
+
+		public float RemainingTime => Duration - ElapsedTime;
+
 		public bool Terminated { get; private set; }
 		
 		public void Update()

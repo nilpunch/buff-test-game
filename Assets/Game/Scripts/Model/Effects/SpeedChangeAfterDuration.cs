@@ -1,11 +1,11 @@
 ﻿namespace Game
 {
-	public class SpeedChangeTimer : TimerBase
+	public class SpeedChangeAfterDuration : TimerJob
 	{
 		private readonly ICharacter _character;
 		private readonly float _deltaSpeed;
 
-		public SpeedChangeTimer(ICharacter character, float deltaSpeed, float duration) : base(duration)
+		public SpeedChangeAfterDuration(ICharacter character, float deltaSpeed, float duration) : base(duration)
 		{
 			_character = character;
 			_deltaSpeed = deltaSpeed;

@@ -14,7 +14,7 @@ namespace Game
 		[SerializeField] private MovementModeConfig _characterInitialMovementConfig;
 		[SerializeField] private float _characterInitialSpeed;
 		
-		private Run _run;
+		private RunningSession _runningSession;
 
 		private void Awake()
 		{
@@ -22,13 +22,10 @@ namespace Game
 
 			var initialMovement = _characterInitialMovementConfig.CreateMovementMode(characterController);
 
-			_run = new Run(
-				new Character(_characterInitialSpeed, initialMovement),
-				new Timers(),
-				characterController);
+			_runningSession = new RunningSession(new Character(_characterInitialSpeed, initialMovement), characterController);
 
 			var pickupFactories = _pickUpConfigs
-				.Select(pickUpConfig => pickUpConfig.CreatePickUpFactory(_run))
+				.Select(pickUpConfig => pickUpConfig.CreatePickUpFactory(_runningSession))
 				.ToList();
 
 			// Need to put this in some level generator
@@ -40,7 +37,7 @@ namespace Game
 
 		private void Update()
 		{
-			_run.Update();
+			_runningSession.Update();
 		}
 	}
 }

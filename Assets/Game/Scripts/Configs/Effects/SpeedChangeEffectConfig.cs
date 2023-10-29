@@ -8,9 +8,9 @@ namespace Game
 		[SerializeField] private float _speedDelta = 5f;
 		[SerializeField] private float _duration = 5f;
 		
-		public override IEffect CreateEffect(Run run)
+		public override IEffect CreateEffect(RunningSession runningSession)
 		{
-			return new SpeedChangeEffect(run.Character, run.Timers, _speedDelta, _duration);
+			return new SpeedChangeEffect(runningSession.Character, runningSession.CommonJobRunner, _speedDelta, _duration);
 		}
 	}
 }

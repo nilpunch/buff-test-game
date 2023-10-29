@@ -4,6 +4,6 @@ namespace Game
 {
 	public abstract class EffectConfig : ScriptableObject
 	{
-		public abstract IEffect CreateEffect(Run run);
+		public abstract IEffect CreateEffect(RunningSession runningSession);
 	}
 }

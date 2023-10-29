@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: FlyMovementEffect
   m_EditorClassIdentifier: 
   _movementModeConfig: {fileID: 11400000, guid: 8a3e826646925d7459f4b4be45de2a0c, type: 2}
-  _duration: 0
+  _duration: 5
