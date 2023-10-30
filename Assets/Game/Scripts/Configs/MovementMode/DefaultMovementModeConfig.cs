@@ -1,13 +1,14 @@
-﻿using UnityEngine;
+﻿using Reflex.Core;
+using UnityEngine;
 
 namespace Game
 {
 	[CreateAssetMenu]
 	public class DefaultMovementModeConfig : MovementModeConfig
 	{
-		public override IMovementMode CreateMovementMode(CharacterController characterController)
+		public override void BindSettings(ContainerDescriptor descriptor)
 		{
-			return new DefaultMovement(characterController);
+			descriptor.AddSingleton(typeof(DefaultMovement), typeof(IMovementMode));
 		}
 	}
 }

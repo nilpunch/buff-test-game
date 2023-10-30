@@ -1,9 +1,10 @@
-﻿using UnityEngine;
+﻿using Reflex.Core;
+using UnityEngine;
 
 namespace Game
 {
-	public abstract class MovementModeConfig : ScriptableObject
+	public abstract class MovementModeConfig : ScriptableObject, ISettingsInstaller
 	{
-		public abstract IMovementMode CreateMovementMode(CharacterController characterController);
+		public abstract void BindSettings(ContainerDescriptor descriptor);
 	}
 }

@@ -1,14 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
-
 namespace Game
 {
     public class Character : ICharacter
     {
-        public Character(float speed, IMovementMode movementMode)
+        public record Args(float Speed)
+        {
+            public float Speed { get; } = Speed;
+        }
+
+        public Character(IMovementMode movementMode, Args args)
         {
             MovementMode = movementMode;
-            Speed = new Stat(speed);
+            Speed = new Stat(args.Speed);
         }
 
         public Stat Speed { get; }

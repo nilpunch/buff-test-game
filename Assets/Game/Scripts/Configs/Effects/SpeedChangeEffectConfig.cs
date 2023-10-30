@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Reflex.Core;
+using UnityEngine;
 
 namespace Game
 {
@@ -7,10 +8,11 @@ namespace Game
 	{
 		[SerializeField] private float _speedDelta = 5f;
 		[SerializeField] private float _duration = 5f;
-		
-		public override IEffect CreateEffect(RunningSession runningSession)
+
+		public override void BindSettings(ContainerDescriptor descriptor)
 		{
-			return new SpeedChangeEffect(runningSession.Character, runningSession.CommonJobs, _speedDelta, _duration);
+			descriptor.AddInstance(new SpeedChangeEffect.Args(_speedDelta, _duration));
+			descriptor.AddSingleton(typeof(SpeedChangeEffect), typeof(IEffect));
 		}
 	}
 }

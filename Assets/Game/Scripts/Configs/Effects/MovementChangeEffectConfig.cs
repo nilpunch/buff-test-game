@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Reflex.Core;
+using UnityEngine;
 
 namespace Game
 {
@@ -8,10 +9,11 @@ namespace Game
 		[SerializeField] private MovementModeConfig _movementModeConfig;
 		[SerializeField] private float _duration;
 		
-		public override IEffect CreateEffect(RunningSession runningSession)
+		public override void BindSettings(ContainerDescriptor descriptor)
 		{
-			return new MovementChangeEffect(runningSession.Character, runningSession.MovementModeChangeJobs,
-				_movementModeConfig.CreateMovementMode(runningSession.CharacterController), _duration);
+			_movementModeConfig.BindSettings(descriptor);
+			descriptor.AddInstance(new MovementChangeEffect.Args(_duration));
+			descriptor.AddSingleton(typeof(MovementChangeEffect), typeof(IEffect));
 		}
 	}
 }

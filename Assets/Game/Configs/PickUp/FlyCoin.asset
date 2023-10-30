@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2357466923bc4557a0d4360e80c3d127, type: 3}
   m_Name: FlyCoin
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 3863018739238449994, guid: b4eaef775ccd49d4693ebf68ca8a7b24, type: 3}
+  <Prefab>k__BackingField: {fileID: 1387145585899270107, guid: b4eaef775ccd49d4693ebf68ca8a7b24, type: 3}
   _effect: {fileID: 11400000, guid: d354ef20d661be9428020d70c9d8a566, type: 2}
-  <GenerationWeight>k__BackingField: 1

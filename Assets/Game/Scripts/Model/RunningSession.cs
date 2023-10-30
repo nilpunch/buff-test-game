@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
 
 namespace Game
 {
@@ -8,27 +10,21 @@ namespace Game
 	/// </summary>
 	public class RunningSession
 	{
-		public RunningSession(ICharacter character, CharacterController characterController)
+		private readonly ICharacter _character;
+		private readonly IEnumerable<IJobRunner> _jobRunners;
+
+		public RunningSession(ICharacter character, IEnumerable<IJobRunner> jobRunners)
 		{
-			CommonJobs = new JobRunner();
-			MovementModeChangeJobs = new JobRunner();
-			Character = character;
-			CharacterController = characterController;
+			Debug.LogWarning(jobRunners.Count());
+			_character = character;
+			_jobRunners = jobRunners;
 		}
-
-		public ICharacter Character { get; }
 		
-		public IJobRunner MovementModeChangeJobs { get; }
-		
-		public IJobRunner CommonJobs { get; }
-		
-		public CharacterController CharacterController { get; }
-
 		public void Update()
 		{
-			Character.Update();
-			CommonJobs.Update();
-			MovementModeChangeJobs.Update();
+			_character.Update();
+			foreach (var jobRunner in _jobRunners)
+				jobRunner.Update();
 		}
 	}
 }

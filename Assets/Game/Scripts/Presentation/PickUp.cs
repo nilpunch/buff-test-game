@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using Reflex.Attributes;
+using Reflex.Core;
+using UnityEngine;
 
 namespace Game
 {
@@ -8,7 +10,8 @@ namespace Game
 		
 		private IEffect _effect;
 
-		public void Construct(IEffect effect)
+		[Inject]
+		public void Inject(IEffect effect)
 		{
 			_effect = effect;
 		}

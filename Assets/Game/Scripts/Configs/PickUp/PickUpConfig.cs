@@ -1,18 +1,19 @@
-﻿using UnityEngine;
+﻿using Reflex.Core;
+using Reflex.Extensions;
+using UnityEngine;
 
 namespace Game
 {
 	[CreateAssetMenu]
-	public class PickUpConfig : ScriptableObject
+	public class PickUpConfig : ScriptableObject, ISettingsInstaller
 	{
-		[SerializeField] private GameObject _prefab;
+		[field: SerializeField] public PickUp Prefab { get; private set; }
+		
 		[SerializeField] private EffectConfig _effect;
 
-		[field: SerializeField] public float GenerationWeight { get; private set; } = 1f;
-
-		public PickUpFactory CreatePickUpFactory(RunningSession runningSession)
+		public void BindSettings(ContainerDescriptor descriptor)
 		{
-			return new PickUpFactory(_prefab, _effect.CreateEffect(runningSession));
+			_effect.BindSettings(descriptor);
 		}
 	}
 }

@@ -1,9 +1,10 @@
-﻿using UnityEngine;
+﻿using Reflex.Core;
+using UnityEngine;
 
 namespace Game
 {
-	public abstract class EffectConfig : ScriptableObject
+	public abstract class EffectConfig : ScriptableObject, ISettingsInstaller
 	{
-		public abstract IEffect CreateEffect(RunningSession runningSession);
+		public abstract void BindSettings(ContainerDescriptor descriptor);
 	}
 }

@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2357466923bc4557a0d4360e80c3d127, type: 3}
   m_Name: DecreaseSpeedCoin
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 7259969030520685916, guid: c9a3c26177176a64cb8d665286a94442, type: 3}
+  <Prefab>k__BackingField: {fileID: 4763829575517936077, guid: c9a3c26177176a64cb8d665286a94442, type: 3}
   _effect: {fileID: 11400000, guid: fe0ecf6066696b248b77b1ce1682880c, type: 2}
-  <GenerationWeight>k__BackingField: 1
