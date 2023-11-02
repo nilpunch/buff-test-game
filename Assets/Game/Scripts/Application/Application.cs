@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Reflex.Attributes;
 using UnityEngine;
 
@@ -12,7 +13,14 @@ namespace Game
 		public void Inject(Generator generator, RunningSession runningSession)
 		{
 			_runningSession = runningSession;
-			generator.Generate();
+
+			Fuck();
+			
+			async void Fuck()
+			{
+				await Task.Delay(1000);
+				generator.Generate();
+			}
 		}
 
 		private void Update()

@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2357466923bc4557a0d4360e80c3d127, type: 3}
+  m_Name: MultiMultiEffectCoin
+  m_EditorClassIdentifier: 
+  <Prefab>k__BackingField: {fileID: 4763829575517936077, guid: f780de48fc520a04c9c3184b7637739a, type: 3}
+  _effect: {fileID: 11400000, guid: 771989ebb47cebf4e93f288425326383, type: 2}

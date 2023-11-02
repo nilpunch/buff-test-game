@@ -11,9 +11,11 @@ namespace Game
 		
 		public override void BindSettings(ContainerDescriptor descriptor)
 		{
-			_movementModeConfig.BindSettings(descriptor);
-			descriptor.AddInstance(new MovementChangeEffect.Args(_duration));
-			descriptor.AddSingleton(typeof(MovementChangeEffect), typeof(IEffect));
+			descriptor.AddSingletonExtend(nameof(MovementChangeEffectConfig), scopeDescriptor =>
+			{
+				_movementModeConfig.BindSettings(scopeDescriptor);
+				scopeDescriptor.AddInstance(new MovementChangeEffect.Args(_duration));
+			}, typeof(MovementChangeEffect), typeof(IEffect));
 		}
 	}
 }

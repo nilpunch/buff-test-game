@@ -1,4 +1,5 @@
-﻿using Reflex.Core;
+﻿using System;
+using Reflex.Core;
 using UnityEngine;
 
 namespace Game
@@ -8,12 +9,14 @@ namespace Game
 	{
 		[SerializeField] private MovementModeConfig _initialMovementConfig;
 		[SerializeField] private float _initialSpeed;
-		
+
 		public void BindSettings(ContainerDescriptor descriptor)
 		{
-			_initialMovementConfig.BindSettings(descriptor);
-			descriptor.AddInstance(new Character.Args(_initialSpeed));
-			descriptor.AddSingleton(typeof(Character), typeof(ICharacter));
+			descriptor.AddSingletonExtend(nameof(CharacterConfig), scopeDescriptor =>
+			{
+				_initialMovementConfig.BindSettings(scopeDescriptor);
+				scopeDescriptor.AddInstance(new Character.Args(_initialSpeed));
+			}, typeof(Character), typeof(ICharacter));
 		}
 	}
 }

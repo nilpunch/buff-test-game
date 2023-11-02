@@ -13,6 +13,7 @@ namespace Game
 		{
 			descriptor.AddInstance(_characterController);
 			descriptor.AddInstance(_levelConfig);
+
 			_characterConfig.BindSettings(descriptor);
 
 			descriptor.AddSingleton(typeof(CommonJobs), typeof(CommonJobs), typeof(IJobRunner));

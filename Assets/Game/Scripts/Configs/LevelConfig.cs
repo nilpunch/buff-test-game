@@ -15,12 +15,4 @@ namespace Game
 		
 		[field: SerializeField] public LevelPickUp[] PickUps { get; private set; }
 	}
-
-	public class LevelGenerator
-	{
-		public LevelGenerator()
-		{
-			
-		}
-	}
 }

@@ -11,8 +11,12 @@ namespace Game
 
 		public override void BindSettings(ContainerDescriptor descriptor)
 		{
-			descriptor.AddInstance(new SpeedChangeEffect.Args(_speedDelta, _duration));
-			descriptor.AddSingleton(typeof(SpeedChangeEffect), typeof(IEffect));
+			var argsScope = new ContainerDescriptor(nameof(SpeedChangeEffect.Args));
+			
+			descriptor.AddSingletonExtend(nameof(SpeedChangeEffectConfig), scopeDescriptor =>
+			{
+				scopeDescriptor.AddInstance(new SpeedChangeEffect.Args(_speedDelta, _duration));
+			}, typeof(SpeedChangeEffect), typeof(IEffect));
 		}
 	}
 }

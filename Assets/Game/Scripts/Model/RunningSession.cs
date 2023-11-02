@@ -15,9 +15,8 @@ namespace Game
 
 		public RunningSession(ICharacter character, IEnumerable<IJobRunner> jobRunners)
 		{
-			Debug.LogWarning(jobRunners.Count());
 			_character = character;
-			_jobRunners = jobRunners;
+			_jobRunners = jobRunners.ToArray();
 		}
 		
 		public void Update()

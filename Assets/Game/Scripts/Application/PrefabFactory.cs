@@ -15,7 +15,9 @@ namespace Game
 
 		public TCreation Create(TCreation prefab, ISettingsInstaller settingsInstaller)
 		{
-			using var scope = _container.Scope(typeof(PrefabFactory<TCreation>).Name, settingsInstaller.BindSettings);
+			using var scope = _container.Scope(GetType().Name, settingsInstaller.BindSettings);
+			
+			
 			
 			return scope.Instantiate(prefab);
 		}

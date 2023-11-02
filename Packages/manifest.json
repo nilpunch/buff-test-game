@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.gustavopsantos.reflex": "https://github.com/gustavopsantos/reflex.git?path=/Assets/Reflex/#5.0.0",
+    "com.gustavopsantos.reflex": "https://github.com/nilpunch/reflex.git?path=/Assets/Reflex/#5.0.0-extras",
     "com.unity.collab-proxy": "1.15.1",
     "com.unity.feature.development": "1.0.1",
     "com.unity.ide.rider": "3.0.7",
