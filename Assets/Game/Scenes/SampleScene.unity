@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 4548664}
   - component: {fileID: 4548663}
   - component: {fileID: 4548665}
+  - component: {fileID: 4548666}
   m_Layer: 0
   m_Name: Installer
   m_TagString: Untagged
@@ -181,8 +182,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _characterController: {fileID: 2111046710}
-  _levelConfig: {fileID: 11400000, guid: 6ef6caefb50f6d74f84b83e62df63f29, type: 2}
   _characterConfig: {fileID: 11400000, guid: 9de85f6999938f64b8e1ee2208515831, type: 2}
+--- !u!114 &4548666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4548662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f40f73c1f654900acca5a1ac599f025, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _levelConfig: {fileID: 11400000, guid: 6ef6caefb50f6d74f84b83e62df63f29, type: 2}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0

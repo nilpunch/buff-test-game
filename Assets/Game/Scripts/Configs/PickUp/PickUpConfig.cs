@@ -5,15 +5,15 @@ using UnityEngine;
 namespace Game
 {
 	[CreateAssetMenu]
-	public class PickUpConfig : ScriptableObject, ISettingsInstaller
+	public class PickUpConfig : ScriptableObject, IInstaller
 	{
 		[field: SerializeField] public PickUp Prefab { get; private set; }
 		
 		[SerializeField] private EffectConfig _effect;
 
-		public void BindSettings(ContainerDescriptor descriptor)
+		public void InstallBindings(ContainerDescriptor descriptor)
 		{
-			_effect.BindSettings(descriptor);
+			_effect.InstallBindings(descriptor);
 		}
 	}
 }

@@ -3,8 +3,8 @@ using UnityEngine;
 
 namespace Game
 {
-	public abstract class EffectConfig : ScriptableObject, ISettingsInstaller
+	public abstract class EffectConfig : ScriptableObject, IInstaller
 	{
-		public abstract void BindSettings(ContainerDescriptor descriptor);
+		public abstract void InstallBindings(ContainerDescriptor descriptor);
 	}
 }

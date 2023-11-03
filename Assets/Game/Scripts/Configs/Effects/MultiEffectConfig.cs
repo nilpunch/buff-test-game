@@ -8,14 +8,14 @@ namespace Game
 	{
 		[SerializeField] private EffectConfig[] _effectConfigs;
 		
-		public override void BindSettings(ContainerDescriptor descriptor)
+		public override void InstallBindings(ContainerDescriptor descriptor)
 		{
 			descriptor.AddSingletonExtend(nameof(MultiEffectConfig), scopeDescriptor =>
 			{
 				scopeDescriptor.IgnoreParentBind(typeof(MultiEffect), typeof(IEffect));
 				
 				foreach (var effectConfig in _effectConfigs)
-					effectConfig.BindSettings(scopeDescriptor);
+					effectConfig.InstallBindings(scopeDescriptor);
 			}, typeof(MultiEffect), typeof(IEffect));
 		}
 	}

@@ -3,8 +3,8 @@ using UnityEngine;
 
 namespace Game
 {
-	public abstract class MovementModeConfig : ScriptableObject, ISettingsInstaller
+	public abstract class MovementModeConfig : ScriptableObject, IInstaller
 	{
-		public abstract void BindSettings(ContainerDescriptor descriptor);
+		public abstract void InstallBindings(ContainerDescriptor descriptor);
 	}
 }

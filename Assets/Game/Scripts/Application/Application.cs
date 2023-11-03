@@ -14,11 +14,19 @@ namespace Game
 		{
 			_runningSession = runningSession;
 
-			Fuck();
+			Wait();
 			
-			async void Fuck()
+			Wait2();
+			
+			async void Wait()
 			{
 				await Task.Delay(1000);
+				generator.Generate();
+			}
+			
+			async void Wait2()
+			{
+				await Task.Delay(2000);
 				generator.Generate();
 			}
 		}

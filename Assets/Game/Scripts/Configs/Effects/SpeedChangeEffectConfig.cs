@@ -9,10 +9,8 @@ namespace Game
 		[SerializeField] private float _speedDelta = 5f;
 		[SerializeField] private float _duration = 5f;
 
-		public override void BindSettings(ContainerDescriptor descriptor)
+		public override void InstallBindings(ContainerDescriptor descriptor)
 		{
-			var argsScope = new ContainerDescriptor(nameof(SpeedChangeEffect.Args));
-			
 			descriptor.AddSingletonExtend(nameof(SpeedChangeEffectConfig), scopeDescriptor =>
 			{
 				scopeDescriptor.AddInstance(new SpeedChangeEffect.Args(_speedDelta, _duration));

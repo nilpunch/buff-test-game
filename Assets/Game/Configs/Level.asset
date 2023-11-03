@@ -17,3 +17,9 @@ MonoBehaviour:
     SpawnWeight: 0
   - PickUpConfig: {fileID: 11400000, guid: 0bff5eb14e79fd5479c6af19f081fdba, type: 2}
     SpawnWeight: 0
+  - PickUpConfig: {fileID: 11400000, guid: 2dd507c71a08f0f42a2f07a505dd8234, type: 2}
+    SpawnWeight: 0
+  - PickUpConfig: {fileID: 11400000, guid: 1fffaa74c35e8664d813f5bd327f6d82, type: 2}
+    SpawnWeight: 0
+  - PickUpConfig: {fileID: 11400000, guid: 7bce1906d77f64749826b88731d18113, type: 2}
+    SpawnWeight: 0

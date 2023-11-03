@@ -1,26 +1,40 @@
-﻿using Reflex.Core;
+﻿using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using Reflex.Core;
 using UnityEngine;
+using Debug = UnityEngine.Debug;
 
 namespace Game
 {
 	public class Generator
 	{
-		private readonly PrefabFactory<PickUp> _pickUpFactory;
-		private readonly LevelConfig _levelConfig;
-
-		public Generator(PrefabFactory<PickUp> pickUpFactory, LevelConfig levelConfig)
+		public class Element
 		{
-			_pickUpFactory = pickUpFactory;
-			_levelConfig = levelConfig;
+			public Element(IFactory<PickUp> factory, float weight)
+			{
+				Factory = factory;
+				Weight = weight;
+			}
+
+			public float Weight { get; }
+			public IFactory<PickUp> Factory { get; }
+		}
+
+		private readonly IEnumerable<Element> _elements;
+
+		public Generator(IEnumerable<Element> elements)
+		{
+			_elements = elements.ToArray();
 		}
 
 		public void Generate()
 		{
-			for (int i = 0; i < 1; i++)
+			for (int i = 0; i < 20; i++)
 			{
-				foreach (var levelPickUp in _levelConfig.PickUps)
+				foreach (var generationElement in _elements)
 				{
-					var element = _pickUpFactory.Create(levelPickUp.PickUpConfig.Prefab, levelPickUp.PickUpConfig);
+					var element = generationElement.Factory.Create();
 					Vector2 randomPosition = Random.insideUnitCircle.normalized;
 					element.transform.position = new Vector3(randomPosition.x, 0f, randomPosition.y) * 5f;
 				}
